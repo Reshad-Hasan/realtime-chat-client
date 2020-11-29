@@ -1,23 +1,22 @@
 import React from "react";
 
-import "./Input.css";
+import { Form, SendButton, StyledInput } from "./style";
 
 const Input = ({ message, setMessage, sendMessage }) => {
   return (
 
-    <form className="form">
-      <input
-        className="input"
+    <Form>
+      <StyledInput
         type="text"
         placeholder="Type a message"
         value={message}
         onChange={(e) => setMessage(e.target.value)}
         onKeyPress={(event => event.key === "Enter" ? sendMessage(event) : null)}
       />
-      <button className="sendButton" onClick={(event) => sendMessage(event)}>
+      <SendButton onClick={(event) => sendMessage(event)}>
         Send
-      </button>
-    </form>
+      </SendButton>
+    </Form>
   );
 };
 
